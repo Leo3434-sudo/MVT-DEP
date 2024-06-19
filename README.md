@@ -7,10 +7,10 @@
     <script>
         function createMessage() {
             var flightNumber = document.getElementById('flightNumber').value;
-            var boardingStart = document.getElementById('boardingStart').value;
-            var boardingFinish = document.getElementById('boardingFinish').value;
-            var doorClosed = document.getElementById('doorClosed').value;
-            var pushback = document.getElementById('pushback').value;
+            var bs = document.getElementById('bs').value;
+            var bf = document.getElementById('bf').value;
+            var dc = document.getElementById('dc').value;
+            var pb = document.getElementById('pb').value;
             var pax = document.getElementById('pax').value;
             var bags = document.getElementById('bags').value;
             var cargo = document.getElementById('cargo').value;
@@ -21,22 +21,22 @@
 
             var services = [];
             document.querySelectorAll('input[name="services"]:checked').forEach((checkbox) => {
-                services.push(checkbox.value);
+                services.push(checkbox.value + "✅️");
             });
 
             var message =
-                "FLIGHT NUMBER: " + flightNumber + "\n" +
-                "BOARDING START: " + boardingStart + "\n" +
-                "BOARDING FINISH: " + boardingFinish + "\n" +
-                "DOOR CLOSED: " + doorClosed + "\n" +
-                "PUSHBACK: " + pushback + "\n" +
-                "PAX: " + pax + "\n" +
-                "BAGS: " + bags + "\n" +
-                "CARGO: " + cargo + "\n" +
-                "WCH: " + wch + "\n" +
-                "PETC: " + petc + "\n" +
-                "AVIH: " + avih + "\n" +
-                "OVS: " + ovs + "\n" +
+                flightNumber + "\n" +
+                "BS " + bs + "\n" +
+                "BF " + bf + "\n" +
+                "DC " + dc + "\n" +
+                "PB " + pb + "\n" +
+                "PAX " + pax + "\n" +
+                "BAGS " + bags + "\n" +
+                "CARGO " + cargo + "\n" +
+                "WCH " + wch + "\n" +
+                "PETC " + petc + "\n" +
+                "AVIH " + avih + "\n" +
+                "OVS " + ovs + "\n" +
                 "Alınan Hizmetler:\n" + services.join("\n");
 
             document.getElementById('output').value = message;
@@ -53,20 +53,20 @@
 <body>
     <h1>MVT DEP</h1>
     <form oninput="createMessage()">
-        <label for="flightNumber">FLIGHT NUMBER:</label>
+        <label for="flightNumber">Uçuş No:</label>
         <input type="text" id="flightNumber"><br><br>
 
-        <label for="boardingStart">BOARDING START:</label>
-        <input type="time" id="boardingStart"><br><br>
+        <label for="bs">BS:</label>
+        <input type="time" id="bs"><br><br>
 
-        <label for="boardingFinish">BOARDING FINISH:</label>
-        <input type="time" id="boardingFinish"><br><br>
+        <label for="bf">BF:</label>
+        <input type="time" id="bf"><br><br>
 
-        <label for="doorClosed">DOOR CLOSED:</label>
-        <input type="time" id="doorClosed"><br><br>
+        <label for="dc">DC:</label>
+        <input type="time" id="dc"><br><br>
 
-        <label for="pushback">PUSHBACK:</label>
-        <input type="time" id="pushback"><br><br>
+        <label for="pb">PB:</label>
+        <input type="time" id="pb"><br><br>
 
         <label for="pax">PAX:</label>
         <input type="text" id="pax"><br><br>
