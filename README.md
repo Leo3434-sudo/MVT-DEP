@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,8 +32,13 @@
             paxMessage += paxY + "Y+ " + paxINF + "INF";
             if (paxINAD) paxMessage += " INAD+" + paxINAD;
 
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = today.toLocaleString('default', { month: 'short' }).toUpperCase();
+            var formattedDate = dd + mm;
+
             var message =
-                flightNumber + "\n" +
+                flightNumber + "/" + formattedDate + "\n" +
                 "BS " + bs + "\n" +
                 "BF " + bf + "\n" +
                 "DC " + dc + "\n" +
