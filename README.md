@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,10 @@
             var bf = document.getElementById('bf').value;
             var dc = document.getElementById('dc').value;
             var pb = document.getElementById('pb').value;
-            var pax = document.getElementById('pax').value;
+            var paxC = document.getElementById('paxC').value;
+            var paxY = document.getElementById('paxY').value;
+            var paxINF = document.getElementById('paxINF').value;
+            var paxINAD = document.getElementById('paxINAD').value;
             var bags = document.getElementById('bags').value;
             var cargo = document.getElementById('cargo').value;
             var wch = document.getElementById('wch').value;
@@ -24,13 +27,18 @@
                 services.push(checkbox.value + "✅️");
             });
 
+            var paxMessage = "PAX: ";
+            if (paxC) paxMessage += paxC + "C ";
+            paxMessage += paxY + "Y+ " + paxINF + "INF";
+            if (paxINAD) paxMessage += " INAD+" + paxINAD;
+
             var message =
                 flightNumber + "\n" +
                 "BS " + bs + "\n" +
                 "BF " + bf + "\n" +
                 "DC " + dc + "\n" +
                 "PB " + pb + "\n" +
-                "PAX " + pax + "\n" +
+                paxMessage + "\n" +
                 "BAGS " + bags + "\n" +
                 "CARGO " + cargo + "\n" +
                 "WCH " + wch + "\n" +
@@ -68,8 +76,11 @@
         <label for="pb">PB:</label>
         <input type="time" id="pb"><br><br>
 
-        <label for="pax">PAX:</label>
-        <input type="text" id="pax"><br><br>
+        <label for="paxC">PAX:</label>
+        <input type="number" id="paxC" placeholder="C"> 
+        <input type="number" id="paxY" placeholder="Y">
+        <input type="number" id="paxINF" placeholder="INF">
+        <input type="number" id="paxINAD" placeholder="INAD"><br><br>
 
         <label for="bags">BAGS:</label>
         <input type="text" id="bags"><br><br>
