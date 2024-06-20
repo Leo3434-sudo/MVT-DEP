@@ -58,7 +58,7 @@
         function copyToClipboard() {
             var message = document.getElementById('output').value;
             navigator.clipboard.writeText(message).then(function() {
-                window.open("https://chat.whatsapp.com/L35Iex4zZNn8YvNA2kP1zN");
+                window.open("https://chat.whatsapp.com/EXAJWqIDyk91zBHukgg020");
             });
         }
     </script>
